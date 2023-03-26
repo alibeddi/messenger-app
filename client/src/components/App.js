@@ -1,7 +1,7 @@
 import React from 'react'
-import Login from './Login'
+import Login from './login/Login'
 import useLocalStorage from '../hooks/useLocalStorage';
-import Dashboard from './Dashboard'
+import Dashboard from './dashboard/Dashboard'
 import { ContactsProvider } from '../contexts/ContactsProvider'
 import { ConversationsProvider } from '../contexts/ConversationsProvider';
 import { SocketProvider } from '../contexts/SocketProvider';

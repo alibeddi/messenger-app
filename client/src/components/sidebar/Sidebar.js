@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { Tab, Nav, Button, Modal } from 'react-bootstrap'
-import Conversations from './Conversations'
-import Contacts from './Contacts'
-import NewContactModal from './NewContactModal'
-import NewConversationModal from './NewConversationModal'
+import Conversations from '../conversations/Conversations'
+import Contacts from '../contacts/Contacts'
+import NewContactModal from '../newcontact/NewContactModal'
+import NewConversationModal from '../newconversation/NewConversationModal'
 
 const CONVERSATIONS_KEY = 'conversations'
 const CONTACTS_KEY = 'contacts'
@@ -12,7 +12,7 @@ export default function Sidebar({ id }) {
   const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY)
   const [modalOpen, setModalOpen] = useState(false)
   const conversationsOpen = activeKey === CONVERSATIONS_KEY
-  
+
   function closeModal() {
     setModalOpen(false)
   }
