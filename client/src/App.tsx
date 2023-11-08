@@ -14,6 +14,7 @@ const App = () => {
     <Routes>
       <Route
         path='/'
+
         element={
           <ProtectedUserRoute>
             <Chats />
