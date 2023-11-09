@@ -57,12 +57,15 @@ const Login = () => {
       </LogoContainer> */}
       <Container>
         <Header>
-          <HeaderTitle> Hello! Welcome To Messagy 👋🏻</HeaderTitle>
+          <HeaderTitle> Hello! Welcome To Messagy</HeaderTitle>
           <HeaderText>
             Share your smile with this world and find friends
           </HeaderText>
 
-          <ChatIcon />
+          <ChatIcon style={{
+            width: "3rem",
+            height: "3rem"
+          }} />
           <LoginTitle>{isMember ? 'Login' : 'Register'}</LoginTitle>
         </Header>
         <div>
@@ -173,12 +176,13 @@ display:flex;
   padding: 2rem;
   width: 60%;
   height:100%;
+  border-radius: 20px;
 background: rgb(51,238,235);
 background: linear-gradient(180deg, rgba(51,238,235,1) 0%, rgba(104,186,236,1) 50%, rgba(147,126,220,1) 100%);
 `;
 
 const HeaderTitle = styled.h2`
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 500;
   letter-spacing: 1.5px;
   color: var(--login-page-title);
@@ -189,6 +193,7 @@ const HeaderText = styled.p`
   font-size: 35px;
   text-align: center;
   color: #fff;
+  width:60%
 `;
 
 const LoginTitle = styled.h2`
