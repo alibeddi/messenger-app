@@ -10,11 +10,9 @@ import { useAppContext } from './context/appContext';
 
 const App = () => {
   return (
-
     <Routes>
       <Route
         path='/'
-
         element={
           <ProtectedUserRoute>
             <Chats />
@@ -36,7 +34,4 @@ const App = () => {
 
 export default App;
 
-const Wrapper = styled.div`
-  height: 20vh;
-  background-color: var(--app-primary-clr);
-`;
+

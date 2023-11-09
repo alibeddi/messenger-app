@@ -9,7 +9,7 @@ import { useAppContext } from '../context/appContext';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { CREATE_USER } from '../graphql/mutations/userMutations';
-
+import { ReactComponent as ChatIcon } from '../assests/dummy_images/chatIcon.svg'
 const Login = () => {
   const initialState = {
     username: '',
@@ -51,67 +51,74 @@ const Login = () => {
 
   return (
     <Wrapper>
-      <LogoContainer>
+      {/* <LogoContainer>
         <LogoImage src={logo_2} />
         <LogoTitle>MESSENGER APP</LogoTitle>
-      </LogoContainer>
+      </LogoContainer> */}
       <Container>
         <Header>
-          <HeaderTitle>Welcome To Messenger App!</HeaderTitle>
+          <HeaderTitle> Hello! Welcome To Messagy</HeaderTitle>
           <HeaderText>
-            To use our services you must be a registerd user
+            Share your smile with this world and find friends
           </HeaderText>
+
+          <ChatIcon style={{
+            width: "3rem",
+            height: "3rem"
+          }} />
           <LoginTitle>{isMember ? 'Login' : 'Register'}</LoginTitle>
         </Header>
-        <Form onSubmit={onSubmit}>
-          <Label>Username</Label>
-          <Input
-            value={values.username}
-            name='username'
-            type='text'
-            onChange={onChange}
-          />
+        <div>
+          <Form onSubmit={onSubmit}>
+            <Label>Username</Label>
+            <Input
+              value={values.username}
+              name='username'
+              type='text'
+              onChange={onChange}
+            />
 
-          <Label>Password</Label>
-          <Input
-            value={values.password}
-            name='password'
-            type='password'
-            onChange={onChange}
-          />
-          {!isMember && (
-            <>
-              <Label>Nickname</Label>
-              <Input
-                value={values.nickname}
-                name='nickname'
-                type='text'
-                onChange={onChange}
-              />
-            </>
+            <Label>Password</Label>
+            <Input
+              value={values.password}
+              name='password'
+              type='password'
+              onChange={onChange}
+            />
+            {!isMember && (
+              <>
+                <Label>Nickname</Label>
+                <Input
+                  value={values.nickname}
+                  name='nickname'
+                  type='text'
+                  onChange={onChange}
+                />
+              </>
+            )}
+            <Button type='submit'>{isMember ? 'Login' : 'Register'}</Button>
+          </Form>
+          <Member>
+            Not a member yet?{' '}
+            <span
+              onClick={() => setIsMember((prevState) => !prevState)}
+              style={{ color: 'var(--clr-grey-2)', cursor: 'pointer' }}
+            >
+              {isMember ? 'Register' : 'Login'}
+            </span>
+          </Member>
+          {loading || registerLoading ? (
+            <MuiLoader />
+          ) : error || registerError ? (
+            <Error>
+              <MuiAlert type='error'>
+                {error?.message || registerError?.message}
+              </MuiAlert>
+            </Error>
+          ) : (
+            ''
           )}
-          <Button type='submit'>{isMember ? 'Login' : 'Register'}</Button>
-        </Form>
-        <Member>
-          Not a member yet?{' '}
-          <span
-            onClick={() => setIsMember((prevState) => !prevState)}
-            style={{ color: 'var(--clr-grey-2)', cursor: 'pointer' }}
-          >
-            {isMember ? 'Register' : 'Login'}
-          </span>
-        </Member>
-        {loading || registerLoading ? (
-          <MuiLoader />
-        ) : error || registerError ? (
-          <Error>
-            <MuiAlert type='error'>
-              {error?.message || registerError?.message}
-            </MuiAlert>
-          </Error>
-        ) : (
-          ''
-        )}
+        </div>
       </Container>
     </Wrapper>
   );
@@ -125,6 +132,8 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  height: 100vh;
+  background-color:#8366DB;
 `;
 
 const LogoContainer = styled.div`
@@ -146,23 +155,34 @@ const LogoTitle = styled.h2`
 
 const Container = styled.div`
   display: flex;
+
   border-top: 5px solid var(--app-primary-hover);
   align-items: center;
-  flex-direction: column;
+  // flex-direction: column;
   background-color: var(--login-page-background);
-  width: 40%;
-  padding: 1rem;
+  width: 90%;
   height: 80vh;
   box-shadow: 0px 2px 14px -2px rgba(0, 0, 0, 0.2);
+  border-radius:20px
 `;
 
 const Header = styled.div`
+display:flex;
   flex-direction: column;
+  align-items:center;
+  justify-content:center;
+  gap:3rem;
+  text-align:center;
   padding: 2rem;
+  width: 60%;
+  height:100%;
+  border-radius: 20px;
+background: rgb(51,238,235);
+background: linear-gradient(180deg, rgba(51,238,235,1) 0%, rgba(104,186,236,1) 50%, rgba(147,126,220,1) 100%);
 `;
 
 const HeaderTitle = styled.h2`
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 500;
   letter-spacing: 1.5px;
   color: var(--login-page-title);
@@ -170,9 +190,10 @@ const HeaderTitle = styled.h2`
 
 const HeaderText = styled.p`
   padding: 1.5rem 0 0;
-  font-size: 18px;
+  font-size: 35px;
   text-align: center;
-  color: var(--clr-grey-2);
+  color: #fff;
+  width:60%
 `;
 
 const LoginTitle = styled.h2`
