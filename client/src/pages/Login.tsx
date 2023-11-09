@@ -9,7 +9,7 @@ import { useAppContext } from '../context/appContext';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { CREATE_USER } from '../graphql/mutations/userMutations';
-import { ReactComponent as ChatIcon } from '../assests/dummy_images/chatIcon.svg'
+import ChatIcon from '../assests/dummy_images/chatIcon'
 const Login = () => {
   const initialState = {
     username: '',
@@ -62,10 +62,7 @@ const Login = () => {
             Share your smile with this world and find friends
           </HeaderText>
 
-          <ChatIcon style={{
-            width: "3rem",
-            height: "3rem"
-          }} />
+          <ChatIcon width="150px" height="150px" />
           <LoginTitle>{isMember ? 'Login' : 'Register'}</LoginTitle>
         </Header>
         <div>
