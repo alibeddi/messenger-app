@@ -51,13 +51,10 @@ const Login = () => {
 
   return (
     <Wrapper>
-      {/* <LogoContainer>
-        <LogoImage src={logo_2} />
-        <LogoTitle>MESSENGER APP</LogoTitle>
-      </LogoContainer> */}
       <Container>
         <Header>
-          <HeaderTitle> Hello! Welcome To Messagy</HeaderTitle>
+          <ChatIcon width="150px" height="150px" />
+          <HeaderTitle>7kayetna</HeaderTitle>
           <HeaderText>
             Share your smile with this world and find friends
           </HeaderText>
@@ -132,10 +129,10 @@ const Wrapper = styled.div`
   padding: 1rem;
   height: 100vh;
   min-height:50rem;
-  background-color:#8366DB;
+  background-color:#ebfefe;
 `;
 const AuthBody = styled.div`
-width:40%;
+width:55%;
 height:100%;
 display: flex; 
 align-items:center;
@@ -162,9 +159,7 @@ const LogoTitle = styled.h2`
 
 const Container = styled.div`
   display: flex;
-  border-top: 5px solid var(--app-primary-hover);
   align-items: center;
-  // flex-direction: column;
   background-color: var(--login-page-background);
   width: 90%;
   max-width: 72rem;
@@ -182,9 +177,9 @@ display:flex;
   gap:3rem;
   text-align:center;
   padding: 2rem;
-  width: 60%;
+  width: 45%;
   height:100%;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
 background: rgb(51,238,235);
 background: linear-gradient(180deg, rgba(51,238,235,1) 0%, rgba(104,186,236,1) 50%, rgba(147,126,220,1) 100%);
 `;
@@ -243,8 +238,8 @@ const Input = styled.input`
   background-color: var(--login-page-input);
   font-size: 100%;
   line-height: 1.15;
-  width: 100%;
-  border:none;
+  width: 60%;
+  border: 1px solid #fefefe;
 `
 
 const Button = styled.button`
