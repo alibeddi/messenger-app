@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import logo_2 from '../assests/dummy_images/logo_2.png';
+// import logo_2 from '../assests/dummy_images/logo_2.png';
 const Logo = () => {
   return (
     <Wrapper>
-      <LogoImage src={logo_2} />
+      {/* <LogoImage src={logo_2} /> */}
       <Title>MESSENGER APP</Title>
     </Wrapper>
   );

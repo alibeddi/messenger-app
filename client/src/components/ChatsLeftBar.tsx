@@ -16,11 +16,11 @@ const ChatsLeftBar = () => {
         <UserProfile />
         <Container isEditing={isEditing}>
           <UserHeader />
-          <SearchBar
+          {/* <SearchBar
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
-          />
-          <ContactsFiltering />
+          /> */}
+          {/* <ContactsFiltering /> */}
           <AllUsersContainer searchQuery={searchQuery} />
         </Container>
       </Wrapper>

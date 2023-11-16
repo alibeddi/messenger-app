@@ -51,13 +51,10 @@ const Login = () => {
 
   return (
     <Wrapper>
-      {/* <LogoContainer>
-        <LogoImage src={logo_2} />
-        <LogoTitle>MESSENGER APP</LogoTitle>
-      </LogoContainer> */}
       <Container>
         <Header>
-          <HeaderTitle> Hello! Welcome To Messagy</HeaderTitle>
+          <ChatIcon width="150px" height="150px" />
+          <HeaderTitle>7kayetna</HeaderTitle>
           <HeaderText>
             Share your smile with this world and find friends
           </HeaderText>
@@ -65,7 +62,8 @@ const Login = () => {
           <ChatIcon width="150px" height="150px" />
           <LoginTitle>{isMember ? 'Login' : 'Register'}</LoginTitle>
         </Header>
-        <div>
+        <AuthBody>
+          <Title>SignIn Here</Title>
           <Form onSubmit={onSubmit}>
             <Label>Username</Label>
             <Input
@@ -115,7 +113,7 @@ const Login = () => {
           ) : (
             ''
           )}
-        </div>
+        </AuthBody>
       </Container>
     </Wrapper>
   );
@@ -130,9 +128,18 @@ const Wrapper = styled.div`
   align-items: center;
   padding: 1rem;
   height: 100vh;
-  background-color:#8366DB;
+  min-height:50rem;
+  background-color:#ebfefe;
 `;
-
+const AuthBody = styled.div`
+width:55%;
+height:100%;
+display: flex; 
+align-items:center;
+justify-content:center;
+flex-direction:column;
+gap:1rem
+`
 const LogoContainer = styled.div`
   display: flex;
   width: 40%;
@@ -152,13 +159,12 @@ const LogoTitle = styled.h2`
 
 const Container = styled.div`
   display: flex;
-
-  border-top: 5px solid var(--app-primary-hover);
   align-items: center;
-  // flex-direction: column;
   background-color: var(--login-page-background);
   width: 90%;
+  max-width: 72rem;
   height: 80vh;
+  min-height: 30rem;
   box-shadow: 0px 2px 14px -2px rgba(0, 0, 0, 0.2);
   border-radius:20px
 `;
@@ -171,9 +177,9 @@ display:flex;
   gap:3rem;
   text-align:center;
   padding: 2rem;
-  width: 60%;
+  width: 45%;
   height:100%;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
 background: rgb(51,238,235);
 background: linear-gradient(180deg, rgba(51,238,235,1) 0%, rgba(104,186,236,1) 50%, rgba(147,126,220,1) 100%);
 `;
@@ -207,7 +213,16 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content:center;
   width: 100%;
+`;
+const Title = styled.h1`
+  font-size: 3rem;
+  color: transparent;
+  background: linear-gradient(90deg, rgba(51, 238, 235, 1) 0%, rgba(104, 186, 236, 1) 30%, rgba(147, 126, 220, 1) 100%);
+  -webkit-background-clip: text; /* This is for webkit browsers like Chrome and Safari */
+  background-clip: text;
+  font-weight:600;
 `;
 
 const Label = styled.label`
@@ -223,8 +238,9 @@ const Input = styled.input`
   background-color: var(--login-page-input);
   font-size: 100%;
   line-height: 1.15;
-  width: 55%;
-`;
+  width: 60%;
+  border: 1px solid #fefefe;
+`
 
 const Button = styled.button`
   background-color: var(--profile-edit-btn);

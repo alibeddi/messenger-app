@@ -66,7 +66,7 @@ const ChatsMain = () => {
             </>
           ) : (
             <Container>
-              <Image src={Logo} />
+              {/* <Image src={Logo} /> */}
               <Title>Messenger App</Title>
               <Text>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet

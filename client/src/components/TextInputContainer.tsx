@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import SendIcon from '@mui/icons-material/Send';
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import CropOriginalIcon from '@mui/icons-material/CropOriginal';
 import { useMutation } from '@apollo/client';
 import { POST_MESSAGE } from '../graphql/mutations/chatMutations';
 import { useAppContext } from '../context/appContext';
@@ -86,7 +86,7 @@ const TextInputContainer = ({
           {showEmojiPicker && <Picker onEmojiClick={onEmojiClick} />}
         </Emoji>
 
-        <OpenInNewIcon className='icon' onClick={onClickHandler} />
+        <CropOriginalIcon className='icon' onClick={onClickHandler} />
         <input
           type='file'
           ref={imageInputRef}
